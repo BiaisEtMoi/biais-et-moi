@@ -49,8 +49,7 @@
 	function handleSubmit(e: Event) {
 		e.preventDefault();
 		// Form data is already saved in localStorage via $effect
-		console.log('Form submitted:', formData);
-		// goto('/next-page');
+		goto('/iat', {  replaceState: true});
 	}
 
 	function handleClear() {
@@ -170,7 +169,7 @@
 
 			<div class="button-container">
 				<button type="button" class="clear-button" onclick={handleClear}>Effacer</button>
-				<button type="submit" class="submit-button">Commencer le test</button>
+				<button type="submit" class="submit-button">Faire le test</button>
 			</div>
 		</form>
 	</div>

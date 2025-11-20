@@ -96,5 +96,6 @@ export const ORIGINE_ETHNIQUE_OPTIONS = [
   { value: "noire", label: "Noire" },
   { value: "blanche", label: "Blanche" },
   { value: "asiatique", label: "Asiatique" },
+  { value: "arabe", label: "Arabe" },
   { value: "autre", label: "Autre" },
 ] as const;

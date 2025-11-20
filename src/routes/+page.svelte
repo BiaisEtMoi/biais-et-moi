@@ -26,7 +26,7 @@
 		</section>
 		
 		<div class="cta-container">
-			<a href="/identity" class="cta-button">Commencer le test</a>
+			<a href="/identity" class="cta-button">Commencer</a>
 		</div>
 	</div>
 </main>
