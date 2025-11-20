@@ -17,19 +17,22 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
           attribute2: config.attribute2,
           attribute1: config.attribute1,
 
-          ////In each block, we can include a number of mini-blocks, to reduce repetition of same group/response.
-          blockAttributes_nTrials: 1,
-          blockSwitch_nMiniBlocks: 1,
-          ////In each block, we can include a number of mini-blocks, to reduce repetition of same group/response.
-          blockSwitch_nTrials: 1, //Default is 24, but the demo studies are using 40 currently.
-          blockCategories_nTrials: 1,
-          blockSwitch_nMiniBlocks: 1,
-          blockCategories_nMiniBlocks: 1,
+          // blockAttributes_nTrials: 1,
+          // blockAttributes_nMiniBlocks: 1,
+          // blockCategories_nTrials: 1,
+          // blockCategories_nMiniBlocks: 1,
+          // blockFirstCombined_nTrials: 1,
+          // blockFirstCombined_nMiniBlocks: 1,
+          // blockSecondCombined_nTrials: 1, //Not used if nBlocks=5.
+          // blockSecondCombined_nMiniBlocks: 1, //Not used if nBlocks=5.
+          // blockSwitch_nTrials: 1,
+          // blockSwitch_nMiniBlocks: 1,
 
-          fb_strong_Att1WithCatA_Att2WithCatB: 'Your data suggest strong automatic preference for categoryB over categoryA.',
-          fb_moderate_Att1WithCatA_Att2WithCatB: 'Your data suggest moderate automatic preference for categoryB over categoryA.',
-          fb_slight_Att1WithCatA_Att2WithCatB: 'Your data suggest weak automatic preference for categoryB over categoryA.',
-          fb_equal_CatAvsCatB: 'Your data suggest no automatic preference between categoryA and categoryB.',
+          fb_strong_Att1WithCatA_Att2WithCatB: 'Vos données suggèrent une forte préférence automatique pour categoryB plutôt que categoryA.',
+          fb_moderate_Att1WithCatA_Att2WithCatB: 'Vos données suggèrent une préférence automatique modérée pour categoryB plutôt que categoryA.',
+          fb_slight_Att1WithCatA_Att2WithCatB: 'Vos données suggèrent une faible préférence automatique pour categoryB plutôt que categoryA.',
+          fb_equal_CatAvsCatB: 'Vos données ne suggèrent aucune préférence automatique entre categoryA et categoryB.',
+
           leftKeyText: 'Appuyez sur "E" pour',
           rightKeyText: 'Appuyez sur "I" pour',
           fontColor: '#000000', //The default color used for printed messages.

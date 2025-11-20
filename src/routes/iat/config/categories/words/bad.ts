@@ -8,11 +8,11 @@ export const bad = {
   stimulusMedia: [
     //Stimuli content as PIP's media objects
     { word: "Agressif" },
-    // { word: "Impatient" },
-    // { word: "Opposant" },
-    // { word: "Inobservant" },
-    // { word: "Irrespectueux" },
-    // { word: "Egoïste" },
+    { word: "Impatient" },
+    { word: "Opposant" },
+    { word: "Inobservant" },
+    { word: "Irrespectueux" },
+    { word: "Egoïste" },
   ],
   //Stimulus css
   stimulusCss: { color: "#0000FF", "font-size": "1.8em" },

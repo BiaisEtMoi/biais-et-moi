@@ -156,7 +156,7 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
       rightKeyText: 'Press "I" for',
       keysCss: { 'font-size': '0.8em', 'font-family': 'courier', color: '#000000' },
       //Text and style for the separator between the top and bottom category labels.
-      orText: 'ou',
+      orText: 'or',
       orCss: { 'font-size': '1.8em', color: '#000000' },
 
       instWidth: 99, //The width of the instructions stimulus
@@ -363,15 +363,16 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
     */
     API.addSettings('canvas', piCurrent.canvas);
     API.addSettings('base_url', piCurrent.base_url);
-    API.addSettings('logger', {
-      pulse: 20,
-      url: '/implicit/PiPlayerApplet'
-    });
+    API.addSettings('redirect', ''); // Prevent automatic redirect after task ends
+    console.log("KAKLDA", window.onIATDone)
+
     API.addSettings('hooks', {
       endTask: function () {
-        var DScoreObj = scorer.computeD();
+        const DScoreObj = scorer.computeD();
         piCurrent.feedback = DScoreObj.FBMsg;
-        API.save({ block3Cond: block3Cond, feedback: DScoreObj.FBMsg, d: DScoreObj.DScore });
+
+        console.log("c fini", { block3Cond: piCurrent.block3Cond, feedback: DScoreObj.FBMsg, d: DScoreObj.DScore })
+        window.onIATDone({ block3Cond: block3Cond, feedback: DScoreObj.FBMsg, d: DScoreObj.DScore || 0.5 })
       }
     });
     /**
@@ -1072,17 +1073,17 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
     }
     //////////////////////////////
     //Add final trial
-    trialSequence.push({
-      inherit: 'instructions',
-      data: { blockStart: true },
-      layout: [{ media: { word: '' } }],
-      stimuli: [
-        {
-          inherit: 'Default',
-          media: { word: (isTouch ? piCurrent.finalTouchText : piCurrent.finalText) }
-        }
-      ]
-    });
+    // trialSequence.push({
+    //   inherit: 'instructions',
+    //   data: { blockStart: true },
+    //   layout: [{ media: { word: '' } }],
+    //   stimuli: [
+    //     {
+    //       inherit: 'Default',
+    //       media: { word: (isTouch ? piCurrent.finalTouchText : piCurrent.finalText) }
+    //     }
+    //   ]
+    // });
 
     //Add the trials sequence to the API.
     API.addSequence(trialSequence);
@@ -1112,7 +1113,7 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
       minRT: 400, //Below this latency
       maxRT: 10000, //above this
       errorLatency: { use: errorLatencyUse, penalty: 600, useForSTD: true },
-      postSettings: { score: "score", msg: "feedback", url: "/implicit/scorer" }
+      // postSettings: { score: "score", msg: "feedback", url: "/implicit/scorer" }
     });
 
     //Helper function to set the feedback messages.
@@ -1141,9 +1142,9 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
     if (piCurrent.tooFast !== '') {
       scoreMessageObject.tooFast = piCurrent.tooFast;
     }
-    if (piCurrent.notEnough !== '') {
-      scoreMessageObject.notEnough = piCurrent.notEnough;
-    }
+    // if (piCurrent.notEnough !== '') {
+    //   scoreMessageObject.notEnough = piCurrent.notEnough;
+    // }
     //Set messages to the scorer.
     scorer.addSettings('message', scoreMessageObject);
 

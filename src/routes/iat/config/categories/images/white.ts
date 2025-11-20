@@ -8,11 +8,11 @@ export const white = {
   stimulusMedia: [
     //Stimuli content as PIP's media objects
     { image: "wf2_nc.jpg" },
-    // { image: 'wf3_nc.jpg' },
-    // { image: 'wf6_nc.jpg' },
-    // { image: 'wm1_nc.jpg' },
-    // { image: 'wm4_nc.jpg' },
-    // { image: 'wm6_nc.jpg' }
+    { image: "wf3_nc.jpg" },
+    { image: "wf6_nc.jpg" },
+    { image: "wm1_nc.jpg" },
+    { image: "wm4_nc.jpg" },
+    { image: "wm6_nc.jpg" },
   ],
   //Stimulus css
   stimulusCss: { color: "#31b404", "font-size": "1.8em" },

@@ -4,7 +4,7 @@
  * @param  {?function} done   A function to call once pip is over
  * @return {promise}
  */
-define(function(require){
+define(function (require) {
 
 	var _ = require('underscore'),
 		mainScript = require('app/task/script'),
@@ -14,7 +14,7 @@ define(function(require){
 		global = require('app/global');
 
 
-	function activate(script, done){
+	function activate(script, done) {
 		// init global
 		var glob = global(global());
 		var name = script.name || 'anonymous PIP';
@@ -31,22 +31,22 @@ define(function(require){
 		// activate main view and then display the loading screen
 		main
 			.activate()
-			.done(function(){
+			.done(function () {
 				main
 					.loading(parseDef) // activate loading screen
-					.done(function(){
+					.done(function () {
 						main.empty(); // remove the loading screen
-						play('next',{}); // activate task
+						play('next', {}); // activate task
 					})
-					.fail(function(src){
-						throw new Error('loading resource failed, do something about it! (you can start by checking the error log, you are probably reffering to the wrong url - ' + src +')');
+					.fail(function (src) {
+						throw new Error('loading resource failed, do something about it! (you can start by checking the error log, you are probably reffering to the wrong url - ' + src + ')');
 					});
 			});
 
 		return main.deferred.promise()
-			.then(done || function dfltDone(){
+			.then(done || function dfltDone() {
 				var redirect = script.settings && script.settings.redirect;
-				window.location.href = redirect || window.location.href;
+				// window.location.href = redirect || window.location.href;
 			});
 	}
 

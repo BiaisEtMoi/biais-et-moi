@@ -8,11 +8,11 @@ export const black = {
   stimulusMedia: [
     //Stimuli content as PIP's media objects
     { image: "bf14_nc.jpg" },
-    // { image: 'bf23_nc.jpg' },
-    // { image: 'bf56_nc.jpg' },
-    // { image: 'bm14_nc.jpg' },
-    // { image: 'bm23_nc.jpg' },
-    // { image: 'bm56_nc.jpg' }
+    { image: "bf23_nc.jpg" },
+    { image: "bf56_nc.jpg" },
+    { image: "bm14_nc.jpg" },
+    { image: "bm23_nc.jpg" },
+    { image: "bm56_nc.jpg" },
   ],
   //Stimulus css (style)
   stimulusCss: { color: "#31b404", "font-size": "1.8em" },

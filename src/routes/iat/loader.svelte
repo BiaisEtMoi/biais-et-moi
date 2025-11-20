@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
   /**
   * Loads RequireJS and the IAT script
   */
-  import { bad, good, white, black } from "./config/categories";
-  import * as steps from './config/instructions';
-  import { onMount } from 'svelte';
-
-  const config = {
+ import { bad, good, white, black } from "./config/categories";
+ import * as steps from './config/instructions';
+ import { onMount } from 'svelte';
+ const { onDone }: { onDone: (args?:any) => void } = $props() 
+ 
+ const config = {
     category1: white,
     category2: black,
     attribute1: good,
@@ -54,11 +56,16 @@
 
   function initIAT() {
     const req = (window as any).require;
+
+    if (browser) {
+      console.log("je set", onDone);
+      (window as any).onIATDone = onDone;
+    }
     req(['/iat-script.js'], function (iatScript: any) {
-      console.log("IAT config", config);
       iatScript.init(JSON.parse(JSON.stringify(config)));
     });
   }
+
 
 </script>
 <div id="iat-container">
