@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IAT - Implicit Association Test</title>
+	
+	<!-- Load PIPlayer CSS -->
+	<link rel="stylesheet" href="/bower_components/PIPlayer/src/css/main.css">
+	
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background: #f5f5f5;
+		}
+	</style>
+</head>
+<body>
+	<!-- This is where PIPlayer will render -->
+	<div id="piTarget"></div>
+	
+	<!-- Configure RequireJS before loading it -->
+	<script>
+		var require = {
+			waitSeconds: 200,
+			enforceDefine: true,
+			baseUrl: '/bower_components/PIPlayer/src/js',
+			paths: {
+				pipAPI: 'API',
+				text: ['//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.3/text.min', '../../bower_components/requirejs-text/text'],
+				jquery: ['//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min', '../../bower_components/jquery/jquery.min'],
+				underscore: ['//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.7.0/lodash.min', '../../bower_components/lodash-compat/lodash.min'],
+				backbone: ['//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min', '../../bower_components/backbone/backbone']
+			},
+			packages: [
+				{
+					name: 'pipScorer',
+					location: 'extensions/dscore',
+					main: 'Scorer'
+				}
+			]
+		};
+	</script>
+	
+	<!-- Load RequireJS from CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"></script>
+	
+	<!-- Run the IAT script -->
+	<script>
+		require(['/iat-script.js']);
+	</script>
+
+  <canvas></canvas>
+</body>
+</html>

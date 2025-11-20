@@ -1,0 +1,41 @@
+{
+  "name": "PIPlayer",
+  "version": "0.3.15",
+  "main": [
+    "dist/js/app/activatePIP",
+    "dist/js/app/API"
+  ],
+  "ignore": [
+    ".gitattributes",
+    ".gitignore",
+    ".jshintrc",
+    "bower_components",
+    "docs",
+    "Gruntfile.js",
+    "node_modules",
+    "package.json",
+    "README.md",
+    "resources",
+    "test",
+    "user"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.14",
+    "lodash-compat": "3.5.0",
+    "requirejs-text": "~2.0.12",
+    "backbone": "1.1.2",
+    "json2": "*",
+    "jquery": "components/jquery#~1.10.2"
+  },
+  "homepage": "https://github.com/danfunk/PIPlayer",
+  "_release": "0.3.15",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.15",
+    "commit": "a06f0209401524bdace24992821e6b9fcc84ff1f"
+  },
+  "_source": "https://github.com/danfunk/PIPlayer.git",
+  "_target": "^0.3.15",
+  "_originalSource": "PIPlayer",
+  "_direct": true
+}
