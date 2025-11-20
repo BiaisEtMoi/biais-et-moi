@@ -138,12 +138,12 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
       remindError: true,
 
       remindErrorText: '<p align="center" style="font-size:"0.6em"; font-family:arial">' +
-        'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-        'Press the other key to continue.<p/>',
+        'Si vous faites une erreur, un <font color="#ff0000"><b>X</b></font> rouge apparaîtra. ' +
+        'Appuyez sur l\'autre touche pour continuer.<p/>',
 
       remindErrorTextTouch: '<p align="center" style="font-size:"1.4em"; font-family:arial">' +
-        'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-        'Touch the other side to continue.<p/>',
+        'Si vous faites une erreur, un <font color="#ff0000"><b>X</b></font> rouge apparaîtra. ' +
+        'Touchez l\'autre côté pour continuer.<p/>',
 
       errorCorrection: true, //Should participants correct error responses?
       errorFBDuration: 500, //Duration of error feedback display (relevant only when errorCorrection is false)
@@ -156,7 +156,7 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
       rightKeyText: 'Press "I" for',
       keysCss: { 'font-size': '0.8em', 'font-family': 'courier', color: '#000000' },
       //Text and style for the separator between the top and bottom category labels.
-      orText: 'or',
+      orText: 'ou',
       orCss: { 'font-size': '1.8em', color: '#000000' },
 
       instWidth: 99, //The width of the instructions stimulus

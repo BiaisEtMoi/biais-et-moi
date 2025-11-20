@@ -1,5 +1,5 @@
 export const bad = {
-  name: "Bad words",
+  name: "mauvais patient",
   title: {
     media: { word: "Mauvais patient" },
     css: { color: "#0000FF", "font-size": "2em" },
@@ -8,11 +8,11 @@ export const bad = {
   stimulusMedia: [
     //Stimuli content as PIP's media objects
     { word: "Agressif" },
-    { word: "Impatient" },
-    { word: "Opposant" },
-    { word: "Inobservant" },
-    { word: "Irrespectueux" },
-    { word: "Egoïste" },
+    // { word: "Impatient" },
+    // { word: "Opposant" },
+    // { word: "Inobservant" },
+    // { word: "Irrespectueux" },
+    // { word: "Egoïste" },
   ],
   //Stimulus css
   stimulusCss: { color: "#0000FF", "font-size": "1.8em" },

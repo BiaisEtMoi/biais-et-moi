@@ -2,7 +2,8 @@
   /**
   * Loads RequireJS and the IAT script
   */
-  import { bad, good, white, black } from "../config/categories";
+  import { bad, good, white, black } from "./config/categories";
+  import * as steps from './config/instructions';
   import { onMount } from 'svelte';
 
   const config = {
@@ -10,6 +11,7 @@
     category2: black,
     attribute1: good,
     attribute2: bad,
+    steps
   };
 
   onMount(() => {
@@ -54,7 +56,7 @@
     const req = (window as any).require;
     req(['/iat-script.js'], function (iatScript: any) {
       console.log("IAT config", config);
-      iatScript.init(config);
+      iatScript.init(JSON.parse(JSON.stringify(config)));
     });
   }
 

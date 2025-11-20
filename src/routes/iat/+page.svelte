@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Loader from './components/loader.svelte';
+  import Loader from './loader.svelte';
 </script>
 
 <Loader />
