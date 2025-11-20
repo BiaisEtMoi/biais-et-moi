@@ -11,12 +11,12 @@
 		REGIONS,
 		ORIGINE_ETHNIQUE_OPTIONS
 	} from './field-values';
+  import { getIdentityFromStorage, STORAGE_KEY } from './identity.storage';
 
-	const STORAGE_KEY = 'identity-form-data';
 
 	// Initialize form data from localStorage if available
 	const initialFormData = browser 
-		? JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null') ?? {
+		? getIdentityFromStorage() ?? {
 			sexe: '',
 			age: '',
 			profession: '',
@@ -24,7 +24,8 @@
 			specialite: '',
 			structure: '',
 			region: '',
-			origineEthnique: ''
+			origineEthnique: '',
+			valid: false
 		}
 		: {
 			sexe: '',
@@ -34,7 +35,8 @@
 			specialite: '',
 			structure: '',
 			region: '',
-			origineEthnique: ''
+			origineEthnique: '',
+			valid: false
 		};
 
 	let formData = $state(initialFormData);
@@ -48,8 +50,10 @@
 
 	function handleSubmit(e: Event) {
 		e.preventDefault();
+
+		formData.valid = true;
 		// Form data is already saved in localStorage via $effect
-		goto('/iat', {  replaceState: true});
+		goto('/iat');
 	}
 
 	function handleClear() {
@@ -61,12 +65,26 @@
 			specialite: '',
 			structure: '',
 			region: '',
-			origineEthnique: ''
+			origineEthnique: '',
+			valid: false
 		};
 		if (browser) {
 			localStorage.removeItem(STORAGE_KEY);
 		}
 	}
+
+	// Check if form is valid
+	const isFormValid = $derived(() => {
+		const baseFields = formData.sexe && formData.age && formData.profession && 
+			formData.structure && formData.region && formData.origineEthnique;
+		
+		// If profession is médecin, also require typePoste and specialite
+		if (formData.profession === 'medecin') {
+			return baseFields && formData.typePoste && formData.specialite;
+		}
+		
+		return baseFields;
+	});
 </script>
 
 <main>
@@ -169,7 +187,7 @@
 
 			<div class="button-container">
 				<button type="button" class="clear-button" onclick={handleClear}>Effacer</button>
-				<button type="submit" class="submit-button">Faire le test</button>
+				<button type="submit" class="submit-button" disabled={!isFormValid()}>Faire le test</button>
 			</div>
 		</form>
 	</div>
@@ -269,6 +287,17 @@
 
 	.submit-button:active {
 		transform: translateY(1px);
+	}
+
+	.submit-button:disabled {
+		background-color: #ccc;
+		cursor: not-allowed;
+		opacity: 0.6;
+	}
+
+	.submit-button:disabled:hover {
+		background-color: #ccc;
+		transform: none;
 	}
 
 	.clear-button {
