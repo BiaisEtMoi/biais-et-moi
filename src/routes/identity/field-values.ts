@@ -71,6 +71,7 @@ export const SPECIALITES = [
 "Rhumatologie",
 "Urologie",
 "Santé publique et médecine sociale",
+"Autre"
   ] as const;
 
 export const STRUCTURE_OPTIONS = [
