@@ -105,5 +105,5 @@ export const REGIONS = [
 export const ORIGINE_ETHNIQUE_OPTIONS = [
   { value: "noire", label: "Personne non blanche" },
   { value: "blanche", label: "Personne blanche" },
-  { value: "autre", label: "Autre" },
+  { value: "autre", label: "Ne se prononce pas" },
 ] as const;
