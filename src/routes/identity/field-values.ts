@@ -18,7 +18,7 @@ export const PROFESSION_OPTIONS = [
    { value: "ide", label: "IDE (Infirmier Diplômé d'État)" },
    { value: "as", label: "AS (Aide-Soignant)" },
    { value: "dentiste", label: "Chirurgien-dentiste" },
-   { value: "SF", label: "Sage-femme" 
+   { value: "SF", label: "Sage-femme" },
    { value: "pharmacien", label: "Pharmacien" },
    { value: "préparateur en pharmacie", label: "Préparateur en pharmacie" },
    { value: "kine", label: "Masseur-kinésithérapeute" },
@@ -53,7 +53,7 @@ export const TYPE_POSTE_OPTIONS = [
     value: "pu-ph",
     label: "PU-PH (Professeur Universitaire - Praticien Hospitalier)",
   },
-  { value: "non concerné", label: "Non concerné" },
+  { value: "non-concerne", label: "Non concerné" },
 ] as const;
 
 export const SPECIALITES = [
