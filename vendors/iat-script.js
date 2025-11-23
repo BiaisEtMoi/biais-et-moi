@@ -10,8 +10,7 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
       require(['activatePIP', 'iat5'], function (activatePIP, iatExtension) {
         console.log("IAT5 extension loaded");
 
-        // Call the IAT extension with the provided configuration
-        var script = iatExtension({
+        const options = {
           category1: config.category1,
           category2: config.category2,
           attribute2: config.attribute2,
@@ -27,14 +26,6 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
           // blockSecondCombined_nMiniBlocks: 1, //Not used if nBlocks=5.
           // blockSwitch_nTrials: 1,
           // blockSwitch_nMiniBlocks: 1,
-
-          fb_strong_Att1WithCatA_Att2WithCatB: 'Vos données suggèrent une forte préférence automatique pour categoryB plutôt que categoryA.',
-          fb_moderate_Att1WithCatA_Att2WithCatB: 'Vos données suggèrent une préférence automatique modérée pour categoryB plutôt que categoryA.',
-          fb_slight_Att1WithCatA_Att2WithCatB: 'Vos données suggèrent une faible préférence automatique pour categoryB plutôt que categoryA.',
-          fb_equal_CatAvsCatB: 'Vos données ne suggèrent aucune préférence automatique entre categoryA et categoryB.',
-
-          leftKeyText: 'Appuyez sur "E" pour',
-          rightKeyText: 'Appuyez sur "I" pour',
           fontColor: '#000000', //The default color used for printed messages.
 
           //Instructions text.
@@ -57,7 +48,12 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
           },
 
           orText: 'ou',
-        });
+        }
+
+        Object.assign(options, config.translations || {})
+
+        // Call the IAT extension with the provided configuration
+        var script = iatExtension(options);
 
         console.log("IAT script created, activating PIPlayer...", script);
 

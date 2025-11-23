@@ -5,6 +5,7 @@
   */
  import { bad, good, white, black } from "./config/categories";
  import * as steps from './config/instructions';
+ import { translations } from './config/translations';
  import { onMount } from 'svelte';
  const { onDone }: { onDone: (args?:any) => void } = $props() 
  
@@ -13,7 +14,8 @@
     category2: black,
     attribute1: good,
     attribute2: bad,
-    steps
+    steps,
+    translations
   };
 
   onMount(() => {
