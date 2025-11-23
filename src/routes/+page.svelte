@@ -4,17 +4,30 @@
 
 <main>
 	<div class="container">
-		<h1>Bienvenue sur <em>nom du test en cours de création</em> !</h1>
+		<h1>Bienvenue sur Biais Et Moi !</h1>
 		
 		<p>
-			Il s'agit d'un test se basant sur les travaux de recherche de Harvard ayant développé 
-			les TAI permettant de tester nos biais cognitifs implicites (ceux dont on ne pense pas 
-			être victimes).
+			Ce test s'inscrit dans le cadre d'une thèse de médecine mais restera en ligne après la soutenance de la dite-thèse.
 		</p>
 		
 		<p>
-			Ce test est anonyme et personnel. Il ne permet de vous tester pour l'instant que sur 
-			des biais cognitifs raciaux.
+			Il s'agit d'un test se basant sur des travaux de chercheurs d'Harvard ayant développé le Test d'Association Implicite (TAI) permettant de tester nos biais cognitifs implicites (ceux auxquels on ne pense pas être soumis).
+		</p>
+		
+		<p>
+			Ce test est <b>anonyme</b> et personnel. Il ne permet de vous tester pour l'instant que sur des biais cognitifs racistes.
+		</p>
+		
+		<p>
+			Il y a d'abord quelques questions sur vous.
+		</p>
+		
+		<p>
+			Puis le test se compose de 7 parties. Les instructions changeant à chaque fois, attention à bien les lire.
+		</p>
+		
+		<p>
+			Les résultats vous seront rendus immédiatement à la fin.
 		</p>
 		
 		<section class="requirements">

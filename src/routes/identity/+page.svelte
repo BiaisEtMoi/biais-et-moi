@@ -176,7 +176,7 @@
 
 			<!-- Origine ethnique -->
 			<div class="form-group">
-				<label for="origineEthnique">Origine ethnique *</label>
+				<label for="origineEthnique">Comment vous identifiez vous *</label>
 				<select id="origineEthnique" bind:value={formData.origineEthnique} required>
 					<option value="">Sélectionnez</option>
 					{#each ORIGINE_ETHNIQUE_OPTIONS as option}

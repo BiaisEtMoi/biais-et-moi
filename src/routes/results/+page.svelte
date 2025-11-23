@@ -97,6 +97,29 @@
 				</div>
 			{/if}
 
+			<div class="description-section">
+				<h2>⚠️ Avertissement</h2>
+				<p>Ces résultats à l'IAT sont fournis uniquement à des fins éducatives. Les résultats peuvent fluctuer et ne doivent pas être utilisés pour prendre des décisions importantes. Les résultats sont influencés par des variables liées au test (par exemple, les mots ou images utilisés pour représenter les catégories) et à la personne (par exemple, la fatigue, ce à quoi vous pensiez avant l'IAT).</p>
+
+				<h2>Comment fonctionne l'IAT?</h2>
+				<p>L'IAT mesure les associations entre des concepts (par exemple, Personnes blanches et Personnes noires) et des évaluations (par exemple, Bon, Mauvais). Les gens réagissent plus rapidement lorsque les éléments qui sont plus étroitement liés dans leur esprit partagent le même bouton. Par exemple, une préférence implicite pour Personnes blanches par rapport à Personnes noires signifie que vous êtes plus rapide pour trier les mots lorsque 'Personnes blanches' et 'Bon' partagent un bouton comparativement à lorsque 'Personnes noires' et 'Bon' partagent un bouton.</p>
+				
+				<p>Les études qui résument les données de nombreuses personnes constatent que l'IAT prédit la discrimination dans le recrutement, l'éducation, les soins de santé et l'application de la loi. Cependant, faire un IAT une fois (comme vous venez de le faire) ne prédit probablement pas bien votre comportement futur.</p>
+
+				<div class="info-links">
+					<p>Pour plus d'informations sur les tests rendez-vous sur le site officiel de développement des TAI :</p>
+					<a href="https://implicit.harvard.edu/implicit/" target="_blank" rel="noopener noreferrer">https://implicit.harvard.edu/implicit/</a>
+					
+					<p>Pour plus de réponses à des questions sur les tests que vous pourriez vous poser rendez-vous ici :</p>
+					<a href="https://www.projectimplicit.net/resources/about-the-iat/" target="_blank" rel="noopener noreferrer">https://www.projectimplicit.net/resources/about-the-iat/</a>
+				</div>
+
+				<div class="reference">
+					<h3>Référence initiale du projet TAI</h3>
+					<p class="citation">Nosek, B. A., Smyth, F. L., Hansen, J. J., Devos, T., Lindner, N. M., Ratliff (Ranganath), K. A., Smith, C. T., Olson, K. R., Chugh, D., Greenwald, A. G., & Banaji, M. R. (2007). Pervasiveness and correlates of implicit attitudes and stereotypes. European Review of Social Psychology, 18, 36-88.</p>
+				</div>
+			</div>
+
 			<div class="actions">
 				<a href="/iat" class="button">Refaire le test</a>
 				<a href="/" class="button secondary">Retour à l'accueil</a>
@@ -178,11 +201,69 @@
 	}
 
 	.feedback-section,
-	.score-section {
+	.score-section,
+	.description-section {
 		background: #f5f5f5;
 		padding: 1.5rem;
 		border-radius: 8px;
 		margin-bottom: 1.5rem;
+	}
+
+	.description-section {
+		background: #fefce8;
+		border-left: 4px solid #eab308;
+	}
+
+	.description-section h2 {
+		margin-top: 1.5rem;
+	}
+
+	.description-section h2:first-child {
+		margin-top: 0;
+	}
+
+	.description-section h3 {
+		font-size: 1.2rem;
+		margin-bottom: 0.5rem;
+		color: #333;
+	}
+
+	.description-section p {
+		margin-bottom: 1rem;
+		line-height: 1.6;
+	}
+
+	.info-links {
+		margin: 1.5rem 0;
+	}
+
+	.info-links a {
+		display: block;
+		color: #2563eb;
+		text-decoration: none;
+		margin-bottom: 1rem;
+		word-break: break-all;
+	}
+
+	.info-links a:hover {
+		text-decoration: underline;
+	}
+
+	.info-links p {
+		margin-bottom: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.reference {
+		margin-top: 2rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid #d4d4d4;
+	}
+
+	.citation {
+		font-style: italic;
+		color: #4b5563;
+		font-size: 0.95rem;
 	}
 
 	.feedback,

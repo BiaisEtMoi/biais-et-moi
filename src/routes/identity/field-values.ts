@@ -36,31 +36,32 @@ export const TYPE_POSTE_OPTIONS = [
 ] as const;
 
 export const SPECIALITES = [
-  "Anesthésie-réanimation",
-  "Biologie médicale",
-  "Cardiologie",
-  "Chirurgie générale",
-  "Chirurgie orthopédique",
-  "Dermatologie",
-  "Endocrinologie",
-  "Gastro-entérologie",
-  "Gériatrie",
-  "Gynécologie médicale",
-  "Gynécologie obstétrique",
-  "Hématologie",
-  "Médecine générale",
-  "Médecine interne",
-  "Néphrologie",
-  "Neurologie",
-  "Oncologie",
-  "Ophtalmologie",
-  "ORL",
-  "Pédiatrie",
-  "Pneumologie",
-  "Psychiatrie",
-  "Radiologie",
-  "Rhumatologie",
-  "Urologie",
+  "Médecins (généralistes et spécialistes)",
+  "Chirurgiens-dentistes (odontologistes)",
+  "Sages-femmes",
+  "Pharmaciens",
+  "Préparateurs en pharmacie",
+  "Infirmiers (diplômés d'État, puéricultrices, anesthésistes, infirmiers de bloc opératoire)",
+  "Masseur-kinésithérapeutes",
+  "Pédicures-podologues",
+  "Ergothérapeutes",
+  "Psychomotriciens",
+  "Orthophonistes",
+  "Orthoptistes",
+  "Manipulateurs d'électroradiologie médicale",
+  "Techniciens de laboratoire médical",
+  "Diététiciens",
+  "Audioprothésistes",
+  "Opticiens-lunetiers",
+  "Prothésistes et orthésistes pour l'appareillage des personnes handicapées",
+  "Aides-soignants",
+  "Auxiliaires de puériculture",
+  "Ambulanciers",
+  "Assistants de service social en santé",
+  "Accompagnants éducatifs et sociaux (AES)",
+  "Educateurs spécialisés en santé",
+  "Conseillers en économie sociale et familiale dans le secteur médical",
+  "Autre",
 ] as const;
 
 export const STRUCTURE_OPTIONS = [
@@ -69,6 +70,15 @@ export const STRUCTURE_OPTIONS = [
   { value: "clinique", label: "Clinique" },
   { value: "cabinet", label: "Cabinet" },
   { value: "maison-sante", label: "Maison de santé" },
+  {
+    value: "etablissement-medico-social",
+    label: "Etablissement médico-social",
+  },
+  { value: "ssr", label: "SSR (Soins de Suite de Réadaptation)" },
+  { value: "had", label: "HAD (Hôpital à domicile)" },
+  { value: "sante-mentale", label: "Etablissement de santé mentale" },
+  { value: "hopital-local", label: "Hôpital local" },
+  { value: "hopital-militaire", label: "Hôpital militaire" },
 ] as const;
 
 export const REGIONS = [
@@ -93,9 +103,7 @@ export const REGIONS = [
 ] as const;
 
 export const ORIGINE_ETHNIQUE_OPTIONS = [
-  { value: "noire", label: "Noire" },
-  { value: "blanche", label: "Blanche" },
-  { value: "asiatique", label: "Asiatique" },
-  { value: "arabe", label: "Arabe" },
+  { value: "noire", label: "Personne non blanche" },
+  { value: "blanche", label: "Personne blanche" },
   { value: "autre", label: "Autre" },
 ] as const;
