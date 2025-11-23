@@ -1,148 +1,207 @@
-# IAT (Implicit Association Test) Setup Guide
+# IAT Integration Setup
 
-## Overview
+## The Challenge: Bridging Legacy and Modern
 
-The IAT uses the **MinnoJS/PIPlayer** library (from Project Implicit) which was installed via Bower. Since Bower is ancient and MinnoJS uses RequireJS (AMD modules), we're serving it as standalone HTML pages from the `static/` folder.
+This project integrates Harvard's IAT (Implicit Association Test) implementation into a modern SvelteKit application. The original IAT script was built using **legacy web technologies** from the early 2010s:
 
-## File Structure
+- **Bower** for package management (deprecated in favor of npm)
+- **RequireJS** for AMD module loading (predates ES modules)
+- **PIPlayer (Project Implicit Player)** — A specialized framework for running psychological experiments
+
+The challenge was to make this decade-old codebase run seamlessly in a modern SvelteKit + Vite environment while keeping the core IAT logic untouched.
+
+## Architecture Overview
 
 ```
 static/
-├── bower_components/     # MinnoJS/PIPlayer library (copied from root bower_components)
-│   └── PIPlayer/
-│       └── src/
-│           ├── js/       # PIPlayer JavaScript
-│           └── css/      # PIPlayer styles
-├── iat.html             # Main IAT page (loads PIPlayer)
-└── iat-script.js        # Your IAT configuration
-```
+├── bower_components/        # Vendor libraries (legacy dependencies)
+│   └── PIPlayer/           # Project Implicit Player framework
+├── iat5.js                 # Harvard's IAT extension (mostly untouched)
+├── iat-script.js           # Our wrapper/bridge layer
+└── images/                 # IAT stimulus images
 
-```
 src/routes/iat/
-├── +page.svelte         # Redirects to /iat.html
-└── libs/
-    └── iat5.js          # IAT5 extension (optional, for advanced usage)
+├── loader.svelte           # Svelte component that bootstraps everything
+├── config/                 # Modern config in TypeScript/Svelte
+│   ├── categories/        # Category definitions (good/bad, etc.)
+│   └── instructions/      # Localized instruction text
 ```
 
-## How It Works
+## Component Breakdown
 
-1. User visits `/iat` route
-2. SvelteKit redirects them to `/iat.html` (static file)
-3. `iat.html` loads PIPlayer via RequireJS
-4. `iat-script.js` configures and runs your IAT
+### 1. `static/bower_components/` — Vendor Libraries
 
-## Usage
+This directory contains **legacy dependencies** that would normally be installed via Bower. We've committed them directly to the repository because:
 
-### 1. Start the dev server
+- Bower is deprecated and no longer maintained
+- These specific versions are required for PIPlayer compatibility
+- The libraries use AMD module format (not compatible with modern bundlers)
 
-```bash
-npm run dev
-```
+**Key libraries:**
 
-### 2. Navigate to the IAT
+- **PIPlayer** — The core experiment framework from Project Implicit
+- **RequireJS** — AMD module loader
+- **Backbone.js, Underscore.js, jQuery** — Legacy dependencies
 
-Visit: http://localhost:5173/iat
+Think of this as our "vendor" directory for the IAT subsystem.
 
-### 3. Customize the IAT
+### 2. `static/iat5.js` — Harvard's IAT Extension
 
-Edit `/static/iat-script.js` to customize:
+This is the **official IAT implementation** from Project Implicit, based on their [IAT extension documentation](https://app-prod-03.implicit.harvard.edu/implicit/common/all/js/pip/piscripts/ydocs/dist/index.html).
 
-- **Stimuli**: Change the words/images shown
-- **Categories**: Black/White people, Good/Bad words, etc.
-- **Settings**: Canvas size, colors, timing, etc.
+**Key points:**
 
-### Example: Using the IAT5 Extension
+- Originally authored by Yoav Bar-Anan and modified by Elad Zlotnick
+- Implements the 7-block IAT paradigm with D-score calculation
+- Defines trial sequences, error handling, and scoring logic
+- **Kept as close to original as possible** to maintain scientific validity
 
-For a full-featured IAT with automatic scoring, you can use the `iat5.js` extension:
+**Minimal modifications made:**
+
+- Some French translations for feedback messages
+- Minor tweaks for compatibility (if any were needed)
+
+⚠️ **This file should rarely be touched**
+
+### 3. `static/iat-script.js` — Our Wrapper/Bridge
+
+This is **our custom layer** that bridges the gap between the legacy IAT code and our modern Svelte application.
+
+**What it does:**
 
 ```javascript
-// In /static/iat-script.js
-define(["pipAPI", "pipScorer"], function (APIConstructor, Scorer) {
-  // Load the IAT5 extension
-  var iat5Path = "/src/routes/iat/libs/iat5";
-
-  require([iat5Path], function (iatExtension) {
-    return iatExtension({
-      category1: {
-        name: "Black people",
-        title: {
-          media: { word: "Black people" },
-          css: { color: "#336600", "font-size": "1.8em" },
-          height: 4,
-        },
-        stimulusMedia: [
-          { word: "Tyrone" },
-          { word: "Malik" },
-          // ... more names
-        ],
-        stimulusCss: { color: "#336600", "font-size": "2.3em" },
-      },
-      category2: {
-        name: "White people",
-        // ... similar structure
-      },
-      attribute1: {
-        name: "Bad words",
-        // ... similar structure
-      },
-      attribute2: {
-        name: "Good words",
-        // ... similar structure
-      },
-      isTouch: false,
-      nBlocks: 7,
-    });
-  });
+define(["pipAPI", "pipScorer", "underscore"], function (
+  APIConstructor,
+  Scorer,
+  _
+) {
+  return {
+    init: function (config) {
+      // 1. Receives config from Svelte (categories, instructions)
+      // 2. Loads iat5.js extension
+      // 3. Passes config to IAT extension
+      // 4. Activates PIPlayer to start the test
+    },
+  };
 });
 ```
 
-## Collecting Results
+**Key responsibilities:**
 
-To save IAT results, you'll need to:
+- Accept configuration from modern JavaScript/Svelte code
+- Transform that config into the format expected by `iat5.js`
+- Initialize the PIPlayer framework
+- Provide French localization strings
+- Configure canvas size and appearance
 
-1. Configure the logger in your IAT script:
+This is where we can safely make changes without affecting the core IAT logic.
 
-```javascript
-API.addSettings("logger", {
-  pulse: 20,
-  url: "/api/iat-results", // Your SvelteKit API endpoint
-});
+### 4. `src/routes/iat/loader.svelte` — The Svelte Bootstrap
+
+This Svelte component is the **entry point** that orchestrates loading the entire legacy pipeline.
+
+**The loading sequence:**
+
+1. **Configure RequireJS** on `window.require`:
+
+   ```javascript
+   window.require = {
+     baseUrl: "/bower_components/PIPlayer/src/js",
+     paths: {
+       pipAPI: "API",
+       jquery: "CDN_or_local_fallback",
+       // ... other dependencies
+     },
+   };
+   ```
+
+2. **Load RequireJS** from CDN:
+
+   ```javascript
+   <script src="requirejs.min.js"></script>
+   ```
+
+3. **Initialize IAT** via our wrapper:
+
+   ```javascript
+   require(["/iat-script.js"], function (iatScript) {
+     iatScript.init(config); // config from Svelte
+   });
+   ```
+
+4. **Pass configuration** from modern Svelte world:
+
+   ```javascript
+   import { bad, good, white, black } from "./config/categories";
+   import * as steps from "./config/instructions";
+
+   const config = {
+     category1: white,
+     category2: black,
+     attribute1: good,
+     attribute2: bad,
+     steps,
+   };
+   ```
+
+5. **Handle completion callback**:
+   ```javascript
+   window.onIATDone = onDone; // Callback prop from parent
+   ```
+
+**Why this is necessary:**
+
+- RequireJS expects to be configured globally before loading
+- PIPlayer was designed for traditional multi-page apps, not SPAs
+- We need to inject modern config (TypeScript, ES modules) into legacy code (AMD modules)
+
+## The MinnoJS Foundation
+
+The entire PIPlayer framework is built on [MinnoJS](https://minnojs.github.io/docs/), a JavaScript library designed specifically for creating online psychological experiments.
+
+**Key MinnoJS concepts used:**
+
+- **Tasks** — Define experimental procedures (in our case, the IAT)
+- **Trials** — Individual units within a task
+- **Stimuli** — What's shown to participants (words, images)
+- **Scoring** — D-score algorithm for IAT results
+
+The [MinnoJS documentation](https://minnojs.github.io/docs/) provides deep insights into:
+
+- How trials are sequenced
+- How stimuli are randomly presented
+- How the D-score is calculated
+- How data is logged and exported
+
+## Configuration Flow
+
+Modern configuration flows from Svelte → Legacy code:
+
+```
+TypeScript Config (Svelte)
+  ↓
+loader.svelte (converts to plain objects)
+  ↓
+iat-script.js (formats for IAT5)
+  ↓
+iat5.js (executes IAT)
+  ↓
+PIPlayer (renders and scores)
 ```
 
-2. Create a SvelteKit API endpoint at `/src/routes/api/iat-results/+server.ts`:
+This allows us to:
 
-```typescript
-import type { RequestHandler } from "./$types";
+- ✅ Define categories and stimuli in TypeScript
+- ✅ Use modern tooling (Vite, SvelteKit)
+- ✅ Maintain scientific validity (untouched core)
+- ✅ Localize to French easily
 
-export const POST: RequestHandler = async ({ request }) => {
-  const data = await request.json();
+## Why This Convoluted Approach?
 
-  // Save to database
-  console.log("IAT Results:", data);
+You might wonder: "Why not rewrite everything in modern JavaScript?"
 
-  return new Response(JSON.stringify({ success: true }));
-};
-```
+**Reasons for preserving the legacy code:**
 
-## Resources
+1. **Time constraints** — This is for a medical thesis with a deadline. Getting a working, validated IAT is more important than a perfect codebase.
 
-- [PIPlayer Documentation](http://projectimplicit.github.io/PIPlayer/)
-- [MinnoJS GitHub](https://github.com/minnojs/minno-time)
-- [Project Implicit](https://implicit.harvard.edu/)
-
-## Troubleshooting
-
-### IAT doesn't load
-
-- Check browser console for errors
-- Verify bower_components copied correctly: `ls static/bower_components/PIPlayer`
-- Check RequireJS is loading: Look for `config.js` in Network tab
-
-### Stimuli not showing
-
-- Check the stimulus definitions in `iat-script.js`
-- Verify CSS paths in `iat.html`
-
-### Want to customize further?
-
-Check `/src/routes/iat/libs/iat5.js` for a complete example of an IAT configuration with all the blocks, scoring, and feedback.
+2. **It works** — Despite being old, the PIPlayer framework is robust and battle-tested.
