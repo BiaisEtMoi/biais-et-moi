@@ -78,6 +78,10 @@
       margin-bottom: 3rem;
     }
 
+    :global(.stimulus[data-handle="targetStim"]) {
+      text-align: center;
+    }
+
     :global(img) {
       display: block;
       margin: auto;
