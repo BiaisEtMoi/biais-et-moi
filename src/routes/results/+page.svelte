@@ -43,7 +43,7 @@
 	// Only check state, redirect if not present
 	onMount(() => {
 		const state =  $page.state as any;
-    // const state = { block3Cond: 'AB', feedback: 'Votre score indique...', d: '0.45' }; // For testing
+    // const state = { block3Cond: 'AB', feedback: 'Votre score indique que vous êtes turbo mega raciste, en fait.', d: '0.45' }; // For testing
 		
 		if (state?.block3Cond && state?.feedback) {
 			displayData = {
@@ -83,46 +83,41 @@
 		</div>
 	{:else}
 		<div class="results-container">
-			<h1>Résultats du test</h1>
-			
-			<div class="feedback-section">
-				<h2>Retour</h2>
-				<p class="feedback">{displayData.feedback}</p>
+			<div class="feedback-wrapper">
+				<div class="feedback-section">
+					<h2>Resultats</h2>
+					<p class="feedback">{displayData.feedback}</p>
+				</div>
 			</div>
 
-			{#if displayData.d}
-				<div class="score-section">
-					<h2>Score</h2>
-					<p class="score">{displayData.d}</p>
-				</div>
-			{/if}
+			<div class="info-wrapper">
+				<div class="description-section">
+					<h2>⚠️ Avertissement</h2>
+					<p>Ces résultats à l'IAT sont fournis uniquement à des fins éducatives. Les résultats peuvent fluctuer et ne doivent pas être utilisés pour prendre des décisions importantes. Les résultats sont influencés par des variables liées au test (par exemple, les mots ou images utilisés pour représenter les catégories) et à la personne (par exemple, la fatigue, ce à quoi vous pensiez avant l'IAT).</p>
 
-			<div class="description-section">
-				<h2>⚠️ Avertissement</h2>
-				<p>Ces résultats à l'IAT sont fournis uniquement à des fins éducatives. Les résultats peuvent fluctuer et ne doivent pas être utilisés pour prendre des décisions importantes. Les résultats sont influencés par des variables liées au test (par exemple, les mots ou images utilisés pour représenter les catégories) et à la personne (par exemple, la fatigue, ce à quoi vous pensiez avant l'IAT).</p>
-
-				<h2>Comment fonctionne l'IAT?</h2>
-				<p>L'IAT mesure les associations entre des concepts (par exemple, Personnes blanches et Personnes noires) et des évaluations (par exemple, Bon, Mauvais). Les gens réagissent plus rapidement lorsque les éléments qui sont plus étroitement liés dans leur esprit partagent le même bouton. Par exemple, une préférence implicite pour Personnes blanches par rapport à Personnes noires signifie que vous êtes plus rapide pour trier les mots lorsque 'Personnes blanches' et 'Bon' partagent un bouton comparativement à lorsque 'Personnes noires' et 'Bon' partagent un bouton.</p>
-				
-				<p>Les études qui résument les données de nombreuses personnes constatent que l'IAT prédit la discrimination dans le recrutement, l'éducation, les soins de santé et l'application de la loi. Cependant, faire un IAT une fois (comme vous venez de le faire) ne prédit probablement pas bien votre comportement futur.</p>
-
-				<div class="info-links">
-					<p>Pour plus d'informations sur les tests rendez-vous sur le site officiel de développement des TAI :</p>
-					<a href="https://implicit.harvard.edu/implicit/" target="_blank" rel="noopener noreferrer">https://implicit.harvard.edu/implicit/</a>
+					<h2>Comment fonctionne l'IAT?</h2>
+					<p>L'IAT mesure les associations entre des concepts (par exemple, Personnes blanches et Personnes noires) et des évaluations (par exemple, Bon, Mauvais). Les gens réagissent plus rapidement lorsque les éléments qui sont plus étroitement liés dans leur esprit partagent le même bouton. Par exemple, une préférence implicite pour Personnes blanches par rapport à Personnes noires signifie que vous êtes plus rapide pour trier les mots lorsque 'Personnes blanches' et 'Bon' partagent un bouton comparativement à lorsque 'Personnes noires' et 'Bon' partagent un bouton.</p>
 					
-					<p>Pour plus de réponses à des questions sur les tests que vous pourriez vous poser rendez-vous ici :</p>
-					<a href="https://www.projectimplicit.net/resources/about-the-iat/" target="_blank" rel="noopener noreferrer">https://www.projectimplicit.net/resources/about-the-iat/</a>
+					<p>Les études qui résument les données de nombreuses personnes constatent que l'IAT prédit la discrimination dans le recrutement, l'éducation, les soins de santé et l'application de la loi. Cependant, faire un IAT une fois (comme vous venez de le faire) ne prédit probablement pas bien votre comportement futur.</p>
+
+					<div class="info-links">
+						<p>Pour plus d'informations sur les tests rendez-vous sur le site officiel de développement des TAI :</p>
+						<a href="https://implicit.harvard.edu/implicit/" target="_blank" rel="noopener noreferrer">https://implicit.harvard.edu/implicit/</a>
+						
+						<p>Pour plus de réponses à des questions sur les tests que vous pourriez vous poser rendez-vous ici :</p>
+						<a href="https://www.projectimplicit.net/resources/about-the-iat/" target="_blank" rel="noopener noreferrer">https://www.projectimplicit.net/resources/about-the-iat/</a>
+					</div>
 				</div>
 
-				<div class="reference">
+				<div class="reference-section">
 					<h3>Référence initiale du projet TAI</h3>
 					<p class="citation">Nosek, B. A., Smyth, F. L., Hansen, J. J., Devos, T., Lindner, N. M., Ratliff (Ranganath), K. A., Smith, C. T., Olson, K. R., Chugh, D., Greenwald, A. G., & Banaji, M. R. (2007). Pervasiveness and correlates of implicit attitudes and stereotypes. European Review of Social Psychology, 18, 36-88.</p>
 				</div>
-			</div>
 
-			<div class="actions">
-				<a href="/iat" class="button">Refaire le test</a>
-				<a href="/" class="button secondary">Retour à l'accueil</a>
+				<div class="actions">
+					<a href="/iat" class="button">Refaire le test</a>
+					<a href="/" class="button secondary">Retour à l'accueil</a>
+				</div>
 			</div>
 		</div>
 	{/if}
@@ -183,30 +178,54 @@
 	}
 
 	.results-container {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
 	}
 
-	h1 {
-		font-size: 2rem;
-		margin-bottom: 2rem;
-		text-align: center;
+	.feedback-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 50vh;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		width: 100%;
+	}
+
+	.info-wrapper {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 2rem 2rem 2rem;
+		width: 100%;
 	}
 
 	h2 {
 		font-size: 1.5rem;
 		margin-bottom: 1rem;
+		margin-top:0;
 		color: #333;
 	}
 
-	.feedback-section,
-	.score-section,
-	.description-section {
+	.description-section,
+	.reference-section {
 		background: #f5f5f5;
 		padding: 1.5rem;
 		border-radius: 8px;
 		margin-bottom: 1.5rem;
+	}
+
+	.feedback-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		background: #f5f5f5;
+		padding: 1.5rem;
+		border-radius: 8px;
+		width: 100%;
 	}
 
 	.description-section {
@@ -222,15 +241,20 @@
 		margin-top: 0;
 	}
 
-	.description-section h3 {
-		font-size: 1.2rem;
-		margin-bottom: 0.5rem;
-		color: #333;
-	}
-
 	.description-section p {
 		margin-bottom: 1rem;
 		line-height: 1.6;
+	}
+
+	.reference-section {
+		background: #f0f9ff;
+		border-left: 4px solid #3b82f6;
+	}
+
+	.reference-section h3 {
+		font-size: 1.2rem;
+		margin-bottom: 0.5rem;
+		color: #333;
 	}
 
 	.info-links {
@@ -254,28 +278,18 @@
 		margin-top: 1rem;
 	}
 
-	.reference {
-		margin-top: 2rem;
-		padding-top: 1.5rem;
-		border-top: 1px solid #d4d4d4;
-	}
-
 	.citation {
 		font-style: italic;
 		color: #4b5563;
 		font-size: 0.95rem;
+		margin: 0;
+		line-height: 1.6;
 	}
 
-	.feedback,
-	.score {
+	.feedback {
 		font-size: 1.1rem;
 		line-height: 1.6;
 		margin: 0;
-	}
-
-	.score {
-		font-weight: 600;
-		color: #2563eb;
 	}
 
 	.actions {

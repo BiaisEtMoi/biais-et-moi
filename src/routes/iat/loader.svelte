@@ -68,6 +68,19 @@
 
 
 </script>
-<div id="iat-container">
-  <!-- IAT will be loaded dynamically via onMount -->
-</div>
+
+<style lang="scss">
+  :global(#canvas) {
+    margin:auto;
+    margin-top: min(15vh, 150px);
+
+    :global(.stimulus) {
+      margin-bottom: 3rem;
+    }
+
+    :global(img) {
+      display: block;
+      margin: auto;
+    }
+  }
+</style>
