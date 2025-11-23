@@ -2,6 +2,10 @@
 	// Landing page - First page users see
 </script>
 
+<svelte:head>
+	<title>Biais & Moi — Accueil</title>
+</svelte:head>
+
 <main>
 	<div class="container">
 		<h1>Bienvenue sur Biais Et Moi !</h1>

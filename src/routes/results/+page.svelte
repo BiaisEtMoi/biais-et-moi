@@ -65,6 +65,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Biais & Moi — Resultats</title>
+</svelte:head>
+
 {#if displayData}
 	{#if isSubmitting}
 		<div class="loader-container">

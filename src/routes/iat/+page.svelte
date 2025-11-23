@@ -9,4 +9,8 @@
 
 </script>
 
+<svelte:head>
+	<title>Biais & Moi — Test</title>
+</svelte:head>
+
 <Loader  onDone={onDone} />

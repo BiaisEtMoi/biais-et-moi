@@ -87,6 +87,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Biais & Moi — A propos de vous</title>
+</svelte:head>
+
 <main>
 	<div class="container">
 		<h1>Informations personnelles</h1>
