@@ -7,7 +7,7 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
       console.log("Initializing IAT with config:", config);
 
       // Load the IAT5 extension and activatePIP
-      require(['activatePIP', '/iat5.js'], function (activatePIP, iatExtension) {
+      require(['activatePIP', 'iat5'], function (activatePIP, iatExtension) {
         console.log("IAT5 extension loaded");
 
         // Call the IAT extension with the provided configuration
@@ -38,11 +38,11 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
           fontColor: '#000000', //The default color used for printed messages.
 
           //Instructions text.
-          instCategoriesPractice: config.steps?.step1,
-          instAttributePractice: config.steps?.step2,
-          instFirstCombined: config.steps?.stepFirstCombined,
-          instSecondCombined: config.steps?.stepSecondCombined,
-          instSwitchCategories: config.steps?.stepSwitchCategories,
+          instCategoriesPractice: config.steps.step1,
+          instAttributePractice: config.steps.step2,
+          instFirstCombined: config.steps.stepFirstCombined,
+          instSecondCombined: config.steps.stepSecondCombined,
+          instSwitchCategories: config.steps.stepSwitchCategories,
           canvas: {
             maxWidth: 725,
             proportions: 0.7,
