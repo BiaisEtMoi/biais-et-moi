@@ -100,10 +100,12 @@ export const REGIONS = [
   "Guyane",
   "La Réunion",
   "Mayotte",
+  "Une region chelou"
 ] as const;
 
 export const ORIGINE_ETHNIQUE_OPTIONS = [
   { value: "noire", label: "Personne non blanche" },
   { value: "blanche", label: "Personne blanche" },
+  { value: "anotherone", label: "UN AUTRE LOL" },
   { value: "autre", label: "Ne se prononce pas" },
 ] as const;
