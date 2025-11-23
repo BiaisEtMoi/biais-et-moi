@@ -14,9 +14,30 @@ export const AGE_RANGE = {
 } as const;
 
 export const PROFESSION_OPTIONS = [
-  { value: "medecin", label: "Médecin" },
-  { value: "ide", label: "IDE (Infirmier Diplômé d'État)" },
-  { value: "as", label: "AS (Aide-Soignant)" },
+   { value: "medecin", label: "Médecin" },
+   { value: "ide", label: "IDE (Infirmier Diplômé d'État)" },
+   { value: "as", label: "AS (Aide-Soignant)" },
+   { value: "dentiste", label: "Chirurgien-dentiste" },
+   { value: "SF", label: "Sage-femme" 
+   { value: "pharmacien", label: "Pharmacien" },
+   { value: "préparateur en pharmacie", label: "Préparateur en pharmacie" },
+   { value: "kine", label: "Masseur-kinésithérapeute" },
+   { value: "podologue", label: "Pédicure-podologue" },
+   { value: "ergo", label: "Ergothérapeute" },
+   { value: "psychomotricien", label: "Psychomotricien" },
+   { value: "orthophoniste", label: "Orthophoniste" },
+   { value: "orthoptiste", label: "Orthoptiste" },
+   { value: "manip radio", label: "Manipulateur d'électroradiologie médicale" },
+   { value: "technicien de labo", label: "Technicien de laboratoire médical" },
+   { value: "diet", label: "Diététicien" },
+   { value: "audioprothesiste", label: "Audioprothésiste" },
+   { value: "opticien", label: "Opticien-lunetiers" },
+   { value: "prothesiste", label: "Prothésiste et orthoprothésiste" },
+   { value: "puer", label: "Auxiliaire de puéricultrice" },
+   { value: "ambulancier", label: "Ambulancier" },
+   { value: "assistante sociale", label: "Assistant de service social en santé" },
+   { value: "accompagnant educatif", label: "Accompagnant éducatif et sociaux (AES)" },
+   { value: "educ spe", label: "Educateur spécialisé en santé" },
 ] as const;
 
 export const TYPE_POSTE_OPTIONS = [
@@ -32,7 +53,7 @@ export const TYPE_POSTE_OPTIONS = [
     value: "pu-ph",
     label: "PU-PH (Professeur Universitaire - Praticien Hospitalier)",
   },
-  { value: "non-concerne", label: "Non concerné" },
+  { value: "non concerné", label: "Non concerné" },
 ] as const;
 
 export const SPECIALITES = [
