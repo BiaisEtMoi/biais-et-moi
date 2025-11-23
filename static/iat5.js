@@ -648,7 +648,7 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
       }
 
       var template = '' +
-        '   <div style="margin:0 2%; text-align:center">  ' +
+        '   <div style="text-align: <%= stimulusData.isLeft ? "left" : "right" %>; display: inline-block; width: 50%">  ' +
         '   	<div style="font-size:0.8em; <%= stimulusData.keysCss %>; visibility:<%= stimulusData.isTouch ? \'hidden\' : \'visible\' %>">  ' +
         '   		<%= stimulusData.isLeft ? stimulusData.leftKeyText : stimulusData.rightKeyText %>  ' +
         '   	</div>  ' +
