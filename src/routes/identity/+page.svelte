@@ -12,7 +12,7 @@
 		ORIGINE_ETHNIQUE_OPTIONS
 	} from './field-values';
   import { getIdentityFromStorage, STORAGE_KEY } from './identity.storage';
-
+		import { track } from '@vercel/analytics';
 
 	// Initialize form data from localStorage if available
 	const initialFormData = browser 
@@ -52,6 +52,7 @@
 		e.preventDefault();
 
 		formData.valid = true;
+		track('identity_form_submitted');
 		// Form data is already saved in localStorage via $effect
 		goto('/iat');
 	}
@@ -71,6 +72,7 @@
 		if (browser) {
 			localStorage.removeItem(STORAGE_KEY);
 		}
+		track('identity_form_cleared');
 	}
 
 	// Check if form is valid
