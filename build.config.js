@@ -32,7 +32,7 @@
   include: ['pipAPI', 'pipScorer', 'activatePIP', 'iat5'],
 
   // Optimize mode
-  optimize: "none",  // Change to "uglify2" for production
+  optimize: "uglify2",  // Change to "uglify2" for production
 
   // Preserve license comments
   preserveLicenseComments: false,
