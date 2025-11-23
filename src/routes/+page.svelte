@@ -60,36 +60,38 @@
 	.container {
 		max-width: 800px;
 		width: 100%;
+		background: white;
+		padding: 3rem;
+		border-radius: 12px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
 	}
 
 	h1 {
-		font-size: 2rem;
+		font-size: 1.875rem;
 		margin-bottom: 1.5rem;
-		color: #333;
-	}
-
-	em {
-		font-style: italic;
+		font-weight: 600;
+		letter-spacing: -0.01em;
 	}
 
 	p {
-		font-size: 1.125rem;
-		line-height: 1.6;
-		margin-bottom: 1.5rem;
-		color: #555;
+		font-size: 1rem;
+		line-height: 1.65;
+		margin-bottom: 1.25rem;
+		font-weight: 400;
 	}
 
 	.requirements {
 		margin-top: 2rem;
 		padding: 1.5rem;
-		background-color: #f5f5f5;
+		background-color: #fafafa;
 		border-radius: 8px;
+		border: 1px solid #f0f0f0;
 	}
 
 	.requirements h2 {
-		font-size: 1.25rem;
+		font-size: 1.125rem;
 		margin-bottom: 1rem;
-		color: #333;
+		font-weight: 600;
 	}
 
 	.requirements ul {
@@ -98,10 +100,9 @@
 	}
 
 	.requirements li {
-		font-size: 1.125rem;
+		font-size: 0.9375rem;
 		line-height: 1.6;
 		margin-bottom: 0.5rem;
-		color: #555;
 	}
 
 	.cta-container {
@@ -111,17 +112,20 @@
 
 	.cta-button {
 		display: inline-block;
-		padding: 1rem 2.5rem;
-		background-color: #ff3e00;
+		padding: 0.875rem 2rem;
+		background-color: #2c2c2c;
 		color: white;
 		text-decoration: none;
 		border-radius: 8px;
-		font-size: 1.25rem;
-		font-weight: 600;
-		transition: background-color 0.2s ease;
+		font-size: 1rem;
+		font-weight: 500;
+		transition: all 0.2s ease;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 	}
 
 	.cta-button:hover {
-		background-color: #cc3200;
+		background-color: #1a1a1a;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		transform: translateY(-1px);
 	}
 </style>

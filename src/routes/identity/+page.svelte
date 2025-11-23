@@ -205,35 +205,35 @@
 		justify-content: center;
 		padding: 2rem;
 		min-height: 100vh;
-		background-color: #f9f9f9;
 	}
 
 	.container {
 		max-width: 600px;
 		width: 100%;
 		background: white;
-		padding: 2.5rem;
+		padding: 3rem;
 		border-radius: 12px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
 		margin: 2rem 0;
 	}
 
 	h1 {
-		font-size: 2rem;
-		margin-bottom: 1rem;
-		color: #333;
+		font-size: 1.875rem;
+		margin-bottom: 0.75rem;
+		font-weight: 600;
+		letter-spacing: -0.01em;
 	}
 
 	.intro {
-		color: #666;
 		margin-bottom: 2rem;
-		line-height: 1.6;
+		line-height: 1.65;
+		font-size: 0.9375rem;
 	}
 
 	form {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		gap: 1.25rem;
 	}
 
 	.form-group {
@@ -243,86 +243,89 @@
 	}
 
 	label {
-		font-weight: 600;
-		color: #333;
-		font-size: 0.95rem;
+		font-weight: 500;
+		font-size: 0.875rem;
+		color: #1a1a1a;
 	}
 
 	select {
-		padding: 0.75rem;
-		border: 1px solid #ddd;
+		padding: 0.625rem 0.75rem;
+		border: 1px solid #e5e5e5;
 		border-radius: 6px;
-		font-size: 1rem;
+		font-size: 0.9375rem;
 		background-color: white;
 		cursor: pointer;
-		transition: border-color 0.2s ease;
+		transition: all 0.15s ease;
+		font-family: inherit;
 	}
 
 	select:hover {
-		border-color: #999;
+		border-color: #d0d0d0;
 	}
 
 	select:focus {
 		outline: none;
-		border-color: #ff3e00;
-		box-shadow: 0 0 0 3px rgba(255, 62, 0, 0.1);
+		border-color: #2c2c2c;
+		box-shadow: 0 0 0 3px rgba(44, 44, 44, 0.05);
 	}
 
 	.button-container {
-		margin-top: 1rem;
+		margin-top: 1.5rem;
 		display: flex;
-		gap: 1rem;
+		gap: 0.75rem;
 		justify-content: center;
 	}
 
 	.submit-button {
-		padding: 1rem 3rem;
-		background-color: #ff3e00;
+		padding: 0.75rem 2rem;
+		background-color: #2c2c2c;
 		color: white;
 		border: none;
 		border-radius: 8px;
-		font-size: 1.125rem;
-		font-weight: 600;
+		font-size: 0.9375rem;
+		font-weight: 500;
 		cursor: pointer;
-		transition: background-color 0.2s ease;
+		transition: all 0.2s ease;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+		font-family: inherit;
 	}
 
-	.submit-button:hover {
-		background-color: #cc3200;
+	.submit-button:hover:not(:disabled) {
+		background-color: #1a1a1a;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		transform: translateY(-1px);
 	}
 
-	.submit-button:active {
-		transform: translateY(1px);
+	.submit-button:active:not(:disabled) {
+		transform: translateY(0);
 	}
 
 	.submit-button:disabled {
-		background-color: #ccc;
+		background-color: #e5e5e5;
+		color: #9ca3af;
 		cursor: not-allowed;
-		opacity: 0.6;
-	}
-
-	.submit-button:disabled:hover {
-		background-color: #ccc;
-		transform: none;
+		box-shadow: none;
 	}
 
 	.clear-button {
-		padding: 1rem 2rem;
-		background-color: #6c757d;
-		color: white;
-		border: none;
+		padding: 0.75rem 1.5rem;
+		background-color: #fafafa;
+		color: #4a4a4a;
+		border: 1px solid #e5e5e5;
 		border-radius: 8px;
-		font-size: 1.125rem;
-		font-weight: 600;
+		font-size: 0.9375rem;
+		font-weight: 500;
 		cursor: pointer;
-		transition: background-color 0.2s ease;
+		transition: all 0.2s ease;
+		font-family: inherit;
 	}
 
 	.clear-button:hover {
-		background-color: #5a6268;
+		background-color: #f0f0f0;
+		border-color: #d0d0d0;
 	}
 
 	.clear-button:active {
-		transform: translateY(1px);
+		transform: translateY(0);
 	}
 </style>
