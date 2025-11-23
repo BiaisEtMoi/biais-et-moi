@@ -1,8 +1,11 @@
 {
-	"name": "paul-racism",
+	"name": "biais-et-moi",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
+	"engines": {
+		"node": "24.11.1"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
