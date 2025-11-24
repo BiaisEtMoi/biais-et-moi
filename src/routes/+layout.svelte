@@ -1,5 +1,4 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
 	import { browser, dev } from '$app/environment';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit'
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
@@ -17,7 +16,22 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<!-- Primary Meta Tags -->
+	<meta name="title" content="Biais & Moi — Test d'Association Implicite" />
+	<meta name="description" content="Outil anonyme de détection des biais cognitifs implicites dans la prise en charge des patients. Test scientifique pour les professionnels de santé." />
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Biais & Moi — Test d'Association Implicite" />
+	<meta property="og:description" content="Outil anonyme de détection des biais cognitifs implicites dans la prise en charge des patients. Test scientifique pour les professionnels de santé." />
+	<meta property="og:site_name" content="Biais & Moi" />
+	<meta property="og:locale" content="fr_FR" />
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:title" content="Biais & Moi — Test d'Association Implicite" />
+	<meta property="twitter:description" content="Outil anonyme de détection des biais cognitifs implicites dans la prise en charge des patients. Test scientifique pour les professionnels de santé." />
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
