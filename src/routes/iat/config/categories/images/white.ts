@@ -11,8 +11,8 @@ export const white = {
     { image: "ww2.jpg" },
     { image: "ww3.jpg" },
     { image: "wm1.jpg" },
-    { image: "wm4.jpg" },
-    { image: "wm6.jpg" },
+    { image: "wm2.jpg" },
+    { image: "wm3.jpg" },
   ],
   //Stimulus css
   stimulusCss: { color: "#31b404", "font-size": "1.8em" },
