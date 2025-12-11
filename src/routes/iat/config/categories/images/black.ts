@@ -7,12 +7,12 @@ export const black = {
   },
   stimulusMedia: [
     //Stimuli content as PIP's media objects
-    { image: "bf14_nc.jpg" },
-    { image: "bf23_nc.jpg" },
-    { image: "bf56_nc.jpg" },
-    { image: "bm14_nc.jpg" },
-    { image: "bm23_nc.jpg" },
-    { image: "bm56_nc.jpg" },
+    { image: "bm1.jpg" },
+    { image: "bm2.jpg" },
+    { image: "bm3.jpg" },
+    { image: "bw1.jpg" },
+    { image: "bw2.jpg" },
+    { image: "bw3.jpg" },
   ],
   //Stimulus css (style)
   stimulusCss: { color: "#31b404", "font-size": "1.8em" },
