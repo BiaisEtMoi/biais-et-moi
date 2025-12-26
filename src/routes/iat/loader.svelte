@@ -51,7 +51,6 @@
     const req = (window as any).require;
 
     if (browser) {
-      console.log("je set", onDone);
       (window as any).onIATDone = onDone;
     }
     

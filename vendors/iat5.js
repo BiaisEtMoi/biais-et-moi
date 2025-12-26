@@ -364,15 +364,12 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
     API.addSettings('canvas', piCurrent.canvas);
     API.addSettings('base_url', piCurrent.base_url);
     API.addSettings('redirect', ''); // Prevent automatic redirect after task ends
-    console.log("KAKLDA", window.onIATDone)
 
     API.addSettings('hooks', {
       endTask: function () {
         const DScoreObj = scorer.computeD();
         piCurrent.feedback = DScoreObj.FBMsg;
-
-        console.log("c fini", { block3Cond: piCurrent.block3Cond, feedback: DScoreObj.FBMsg, d: DScoreObj.DScore })
-        window.onIATDone({ block3Cond: block3Cond, feedback: DScoreObj.FBMsg, d: DScoreObj.DScore || 0.5 })
+        window.onIATDone({ block3Cond: block3Cond, logs: piCurrent ? piCurrent.logs || [] : [], feedback: DScoreObj.FBMsg, d: DScoreObj.DScore || 0.5 })
       }
     });
     /**

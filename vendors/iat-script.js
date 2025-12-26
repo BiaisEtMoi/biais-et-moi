@@ -4,7 +4,6 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
   // Return an init function that accepts configuration
   return {
     init: function (config) {
-      console.log("Initializing IAT with config:", config);
 
       // Load the IAT5 extension and activatePIP
       require(['activatePIP', 'iat5'], function (activatePIP, iatExtension) {
@@ -16,16 +15,16 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
           attribute2: config.attribute2,
           attribute1: config.attribute1,
 
-          // blockAttributes_nTrials: 1,
-          // blockAttributes_nMiniBlocks: 1,
-          // blockCategories_nTrials: 1,
-          // blockCategories_nMiniBlocks: 1,
-          // blockFirstCombined_nTrials: 1,
-          // blockFirstCombined_nMiniBlocks: 1,
-          // blockSecondCombined_nTrials: 1, //Not used if nBlocks=5.
-          // blockSecondCombined_nMiniBlocks: 1, //Not used if nBlocks=5.
-          // blockSwitch_nTrials: 1,
-          // blockSwitch_nMiniBlocks: 1,
+          blockAttributes_nTrials: 1,
+          blockAttributes_nMiniBlocks: 1,
+          blockCategories_nTrials: 1,
+          blockCategories_nMiniBlocks: 1,
+          blockFirstCombined_nTrials: 1,
+          blockFirstCombined_nMiniBlocks: 1,
+          blockSecondCombined_nTrials: 1, //Not used if nBlocks=5.
+          blockSecondCombined_nMiniBlocks: 1, //Not used if nBlocks=5.
+          blockSwitch_nTrials: 1,
+          blockSwitch_nMiniBlocks: 1,
           fontColor: '#000000', //The default color used for printed messages.
 
           //Instructions text.
@@ -54,8 +53,6 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
 
         // Call the IAT extension with the provided configuration
         var script = iatExtension(options);
-
-        console.log("IAT script created, activating PIPlayer...", script);
 
         // Activate PIPlayer with the script
         activatePIP(script);

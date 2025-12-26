@@ -2,9 +2,11 @@ import { json } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
 import { API_ENDPOINT } from "$env/static/private";
 import type { IdentityFormData } from "../../identity/identity.storage";
+import type { LogEntry } from "../../results/+page";
 
 interface SubmitResultsRequestBody {
   identityData: IdentityFormData | null;
+  logs: LogEntry[];
   score: string;
 }
 
@@ -18,10 +20,12 @@ interface SubmitResultsDTO {
   region: string;
   ethnicOrigin: string;
   score: number;
+  logs: string;
+  latency: number;
 }
 
 function transformToDTO(body: SubmitResultsRequestBody): SubmitResultsDTO {
-  const { identityData, score } = body;
+  const { identityData, score, logs } = body;
 
   return {
     gender: identityData?.sexe || "",
@@ -33,6 +37,9 @@ function transformToDTO(body: SubmitResultsRequestBody): SubmitResultsDTO {
     region: identityData?.region || "",
     ethnicOrigin: identityData?.origineEthnique || "",
     score: parseFloat(score) || 0,
+    logs: JSON.stringify(logs),
+    latency:
+      logs.map((log) => log.latency || 0).reduce((a, b) => a + b, 0) || -1,
   };
 }
 

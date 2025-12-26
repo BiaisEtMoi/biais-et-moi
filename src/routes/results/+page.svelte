@@ -23,6 +23,7 @@
 				},
 				body: JSON.stringify({
 					identityData,
+					logs: displayData?.logs || [],
 					score: displayData?.d || ''
 				})
 			});
@@ -49,7 +50,8 @@
 			displayData = {
 				block3Cond: state.block3Cond,
 				feedback: state.feedback,
-				d: state.d || ''
+				d: state.d || '',
+				logs: state.logs || []
 			};
 			
 			// Submit results if we have a score
