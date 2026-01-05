@@ -11,10 +11,6 @@
 		<h1>Bienvenue sur Biais Et Moi !</h1>
 		
 		<p>
-			Ce test s'inscrit dans le cadre d'une thèse de médecine mais restera en ligne après la soutenance de la dite-thèse.
-		</p>
-		
-		<p>
 			Il s'agit d'un test se basant sur des travaux de chercheurs d'Harvard ayant développé le Test d'Association Implicite (TAI) permettant de tester nos biais cognitifs implicites (ceux auxquels on ne pense pas être soumis).
 		</p>
 		
@@ -23,11 +19,11 @@
 		</p>
 		
 		<p>
-			Il y a d'abord quelques questions sur vous.
+			Il débute par quelques questions sur vous.
 		</p>
 		
 		<p>
-			Puis le test se compose de 7 parties. Les instructions changeant à chaque fois, attention à bien les lire.
+			Puis il se compose de 7 parties. Les instructions changeant à chaque fois, attention à bien les lire.
 		</p>
 		
 		<p>
@@ -40,7 +36,7 @@
 				<li>Endroit sans distraction pendant la durée du test (8min)</li>
 				<li>Être sur un ordinateur</li>
 		<p>
-			En poursuivant le test vous acceptez que les données soient exploitées à des fins de recherches.
+			Ce test est en cours de validation. En le poursuivant vous acceptez que les données soient exploitées à des fins de recherches.
 		</p>
 
 			</ul>
