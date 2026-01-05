@@ -112,6 +112,10 @@
 						
 						<p>Pour plus de réponses à des questions sur les tests que vous pourriez vous poser rendez-vous ici :</p>
 						<a href="https://www.projectimplicit.net/resources/about-the-iat/" target="_blank" rel="noopener noreferrer">https://www.projectimplicit.net/resources/about-the-iat/</a>
+
+                      <p> Pour toute question sur le test que vous venez d'effectuez vous pouvez envoyer un mail à cette adresse : paulrouillard123@gmail.com
+                          Si vous souhaitez être tenus au courant des résultats de l'étude merci de le demander par mail et vous les recevrez en réponse quand ils seront disponibles 
+                          Merci d'avoir participer au projet </p>
 					</div>
 				</div>
 
