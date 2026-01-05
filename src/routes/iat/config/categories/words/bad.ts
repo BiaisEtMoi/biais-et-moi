@@ -1,18 +1,18 @@
 export const bad = {
-  name: "mauvais patient",
+  name: "Non grave",
   title: {
-    media: { word: "Mauvais patient" },
+    media: { word: "Grave" },
     css: { color: "#0000FF", "font-size": "2em" },
     height: 4, //Used to position the "Or" in the combined block.
   },
   stimulusMedia: [
     //Stimuli content as PIP's media objects
-    { word: "Agressif" },
-    { word: "Impatient" },
-    { word: "Opposant" },
-    { word: "Inobservant" },
-    { word: "Irrespectueux" },
-    { word: "Egoïste" },
+    { word: "Hoquet" },
+    { word: "Brûlures mictionnelles" },
+    { word: "Démangeaisons" },
+    { word: "Otite" },
+    { word: "Toux" },
+    { word: "Constipation" },
   ],
   //Stimulus css
   stimulusCss: { color: "#0000FF", "font-size": "1.8em" },
