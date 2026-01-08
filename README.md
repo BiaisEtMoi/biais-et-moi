@@ -12,7 +12,7 @@ This test was developed as part of a **medical thesis** and will remain online a
 
 ### Scientific Foundation
 
-The test is based on research by Harvard University researchers who developed the IAT method. This approach measures automatic associations between concepts (e.g., "White people" and "Black people") and evaluations (e.g., "Good", "Bad").
+The test is based on research by Harvard University researchers who developed the IAT method. This approach measures automatic associations between concepts (e.g., "White people" and "Black people") and evaluations (e.g., "Severe symptom", "Non severe symptom").
 
 Scientific studies show that the IAT can predict certain discriminatory behaviors in real-world contexts such as hiring, education, healthcare, and law enforcement.
 
