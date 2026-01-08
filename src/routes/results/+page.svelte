@@ -44,8 +44,6 @@
 	// Only check state, redirect if not present
 	onMount(() => {
 		const state =  $page.state as any;
-    // const state = { block3Cond: 'AB', feedback: 'Votre score indique que vous êtes turbo mega raciste, en fait.', d: '0.45' }; // For testing
-		
 		if (state?.block3Cond && state?.feedback) {
 			displayData = {
 				block3Cond: state.block3Cond,
