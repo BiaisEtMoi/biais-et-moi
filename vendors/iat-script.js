@@ -54,7 +54,6 @@ define(['pipAPI', 'pipScorer', 'underscore'], function (APIConstructor, Scorer, 
             blockSwitch_nMiniBlocks: 1,
           })
         }
-        console.log(config)
         Object.assign(options, config.translations || {})
 
         // Call the IAT extension with the provided configuration
