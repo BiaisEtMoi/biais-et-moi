@@ -16,6 +16,7 @@ interface SubmitResultsDTO {
   profession: string;
   jobType: string;
   specialty: string;
+  emergencyWork: string;
   workplace: string;
   region: string;
   ethnicOrigin: string;
@@ -33,6 +34,7 @@ function transformToDTO(body: SubmitResultsRequestBody): SubmitResultsDTO {
     profession: identityData?.profession || "",
     jobType: identityData?.typePoste || "",
     specialty: identityData?.specialite || "",
+    emergencyWork: identityData?.travailUrgences || "",
     workplace: identityData?.structure || "",
     region: identityData?.region || "",
     ethnicOrigin: identityData?.origineEthnique || "",

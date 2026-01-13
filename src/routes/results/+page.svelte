@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import type { ResultData } from './+page';
 	import { getIdentityFromStorage } from '../identity/identity.storage';
+  import { PUBLIC_DEV_MODE } from '$env/static/public';
 
 	let displayData: ResultData | null = null;
 	let isSubmitting = true;
@@ -43,7 +44,13 @@
 
 	// Only check state, redirect if not present
 	onMount(() => {
-		const state =  $page.state as any;
+		let state: any;
+		if (PUBLIC_DEV_MODE === 'true') {
+			state = { block3Cond: 'AB', feedback: 'Testing score', d: '0.45' }
+		} else {
+			state = $page.state as any
+		}
+		
 		if (state?.block3Cond && state?.feedback) {
 			displayData = {
 				block3Cond: state.block3Cond,

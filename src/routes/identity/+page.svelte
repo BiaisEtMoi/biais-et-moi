@@ -22,6 +22,7 @@
 			profession: '',
 			typePoste: '',
 			specialite: '',
+			travailUrgences: '',
 			structure: '',
 			region: '',
 			origineEthnique: '',
@@ -33,6 +34,7 @@
 			profession: '',
 			typePoste: '',
 			specialite: '',
+			travailUrgences: '',
 			structure: '',
 			region: '',
 			origineEthnique: '',
@@ -64,6 +66,7 @@
 			profession: '',
 			typePoste: '',
 			specialite: '',
+			travailUrgences: '',
 			structure: '',
 			region: '',
 			origineEthnique: '',
@@ -83,6 +86,11 @@
 		// If profession is médecin, also require typePoste and specialite
 		if (formData.profession === 'medecin') {
 			return baseFields && formData.typePoste && formData.specialite;
+		}
+		
+		// If profession is IDE or AS, also require travailUrgences
+		if (formData.profession === 'ide' || formData.profession === 'as') {
+			return baseFields && formData.travailUrgences;
 		}
 		
 		return baseFields;
@@ -154,6 +162,18 @@
 						{#each SPECIALITES as specialite}
 							<option value={specialite}>{specialite}</option>
 						{/each}
+					</select>
+				</div>
+			{/if}
+
+			<!-- Travail aux urgences (only if IDE or AS) -->
+			{#if formData.profession === 'ide' || formData.profession === 'as'}
+				<div class="form-group">
+					<label for="travailUrgences">Travaillez-vous aux urgences ? *</label>
+					<select id="travailUrgences" bind:value={formData.travailUrgences} required>
+						<option value="">Sélectionnez</option>
+						<option value="oui">Oui</option>
+						<option value="non">Non</option>
 					</select>
 				</div>
 			{/if}
