@@ -7,6 +7,7 @@
  import * as steps from './config/instructions';
  import { translations } from './config/translations';
  import { onMount } from 'svelte';
+import { PUBLIC_DEV_MODE } from "$env/static/public";
  const { onDone }: { onDone: (args?:any) => void } = $props() 
  
  const config = {
@@ -15,7 +16,8 @@
     attribute1: good,
     attribute2: bad,
     steps,
-    translations
+    translations,
+    devMode: PUBLIC_DEV_MODE === 'true'
   };
 
   onMount(() => {
