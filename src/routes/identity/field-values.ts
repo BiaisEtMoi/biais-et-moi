@@ -101,7 +101,7 @@ export const SPECIALITES = [
 "Rhumatologie​",
 "Santé publique",
 "Urologie​",
-"Autre spécialité non repertoriée"
+"Autre spécialité non repertoriée",
 "Ne se prononce pas"
   ] as const;
 
