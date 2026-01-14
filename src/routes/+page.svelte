@@ -33,7 +33,7 @@
 		<section class="requirements">
 			<h2>Conditions obligatoires pour faire ce test :</h2>
 			<ul>
-				<li>Endroit sans distraction pendant la durée du test (8min)</li>
+				<li>Endroit sans distraction pendant la durée du test (5min)</li>
 				<li>Être sur un ordinateur</li>
 		<p>
 			Ce test est en cours de validation. En le poursuivant vous acceptez que les données soient exploitées à des fins de recherches.
