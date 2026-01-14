@@ -38,6 +38,8 @@ export const PROFESSION_OPTIONS = [
    { value: "assistante sociale", label: "Assistant de service social en santé" },
    { value: "accompagnant educatif", label: "Accompagnant éducatif et sociaux (AES)" },
    { value: "educ spe", label: "Educateur spécialisé en santé" },
+   { value: "autre", label: "Autre" },
+   { value: "ne-se-prononce-pas", label: "Ne se prononce pas" },
 ] as const;
 
 export const TYPE_POSTE_OPTIONS = [
@@ -54,6 +56,7 @@ export const TYPE_POSTE_OPTIONS = [
     label: "PU-PH (Professeur Universitaire - Praticien Hospitalier)",
   },
   { value: "non-concerne", label: "Non concerné" },
+ { value: "ne-se-prononce-pas", label: "Ne se prononce pas" },
 ] as const;
 
 export const SPECIALITES = [
@@ -99,6 +102,7 @@ export const SPECIALITES = [
 "Santé publique",
 "Urologie​",
 "Autre spécialité non repertoriée"
+"Ne se prononce pas"
   ] as const;
 
 export const STRUCTURE_OPTIONS = [
@@ -116,6 +120,7 @@ export const STRUCTURE_OPTIONS = [
   { value: "sante-mentale", label: "Etablissement de santé mentale" },
   { value: "hopital-local", label: "Hôpital local" },
   { value: "hopital-militaire", label: "Hôpital militaire" },
+  { value: "ne-se-prononce-pas", label: "Ne se prononce pas" },
 ] as const;
 
 export const REGIONS = [
