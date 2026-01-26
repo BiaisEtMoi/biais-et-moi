@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 	import {
 		SEXE_OPTIONS,
-		AGE_RANGE,
+		AGE_OPTIONS,
 		PROFESSION_OPTIONS,
 		TYPE_POSTE_OPTIONS,
 		SPECIALITES,
@@ -109,9 +109,9 @@
 		</p>
 
 		<form onsubmit={handleSubmit}>
-			<!-- Sexe -->
+			<!-- Genre -->
 			<div class="form-group">
-				<label for="sexe">Sexe *</label>
+				<label for="sexe">Genre *</label>
 				<select id="sexe" bind:value={formData.sexe} required>
 					<option value="">Sélectionnez</option>
 					{#each SEXE_OPTIONS as option}
@@ -125,8 +125,8 @@
 				<label for="age">Âge *</label>
 				<select id="age" bind:value={formData.age} required>
 					<option value="">Sélectionnez</option>
-					{#each Array.from({ length: AGE_RANGE.max - AGE_RANGE.min + 1 }, (_, i) => i + AGE_RANGE.min) as age}
-						<option value={age}>{age} ans</option>
+					{#each AGE_OPTIONS as option}
+						<option value={option.value}>{option.label}</option>
 					{/each}
 				</select>
 			</div>

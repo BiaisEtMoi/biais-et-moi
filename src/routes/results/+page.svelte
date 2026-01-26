@@ -120,11 +120,11 @@
 					</div>
 
 					<h2>Des questions ?</h2>
-					<p>Pour toute question sur le test que vous venez d'effectuez vous pouvez envoyer un mail à cette adresse : paulrouillard123@gmail.com</p>
+					<p>Pour toute question sur le test que vous venez d'effectuer, vous pouvez nous contacter.</p>
 					
-					<p>Si vous souhaitez être tenus au courant des résultats de l'étude merci de le demander par mail et vous les recevrez en réponse quand ils seront disponibles</p>
+					<p>Si vous souhaitez être tenus au courant des résultats de l'étude, merci de le demander par mail et vous les recevrez en réponse quand ils seront disponibles.</p>
 
-					<p>Merci d'avoir participer au projet</p>
+					<p>Merci d'avoir participé au projet.</p>
 				</div>
 
 				<div class="reference-section">
