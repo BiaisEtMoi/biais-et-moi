@@ -13,7 +13,7 @@
 		<h1>Bienvenue sur Biais Et Moi !</h1>
 		
 		<p class="project-team">
-			<strong>Porteurs du projet :</strong> <a href="mailto:p-rouillard@chu-montpellier.fr">Paul Rouillard</a> et Dr Clémentine Saujeon
+			<strong>Porteurs du projet :</strong> Paul Rouillard (<a href="mailto:p-rouillard@chu-montpellier.fr">p-rouillard@chu-montpellier.fr</a>) et Dr Clémentine Saujeon
 		</p>
 		
 		<p>
