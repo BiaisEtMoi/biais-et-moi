@@ -50,7 +50,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const body = (await request.json()) as SubmitResultsRequestBody;
     const dto = transformToDTO(body);
 
-    // Post to Google Apps Script
+    // Post data to external API for storage
     const response = await fetch(API_ENDPOINT, {
       method: "POST",
       headers: {
@@ -62,7 +62,7 @@ export const POST: RequestHandler = async ({ request }) => {
     if (!response.ok) {
       return json(
         { error: "Failed to submit results" },
-        { status: response.status }
+        { status: response.status },
       );
     }
 
