@@ -15,7 +15,9 @@
 		<p class="project-team">
 			<strong>Porteurs du projet :</strong> Paul Rouillard (<a href="mailto:p-rouillard@chu-montpellier.fr">p-rouillard@chu-montpellier.fr</a>) et Dr Clémentine Saujeon
 		</p>
-		
+		<p>
+			Le but de ce projet est le développement et la validation d'un test de dépistage des biais cognitifs racistes en santé et est soutenu par le CHU de Montpellier.
+		</p>
 		<p>
 			Il s'agit d'un test se basant sur des travaux de chercheurs d'Harvard<sup><a href="#note1">1</a></sup> ayant développé le Test d'Association Implicite (TAI) permettant de tester nos biais cognitifs implicites (ceux auxquels on ne pense pas être soumis).
 		</p>
@@ -59,7 +61,7 @@
 				<a href="https://faculty.washington.edu/agg/pdf/Nosek%20&%20al.PCIAS.ERSP.2007.pdf" target="_blank" rel="noopener noreferrer">https://faculty.washington.edu/agg/pdf/Nosek%20&%20al.PCIAS.ERSP.2007.pdf</a>
 			</div>
 			<div class="footnote" id="note2">
-				<sup>2</sup> Aucune donnée permettant d'identifier directement ou indirectement les participants n'est collectée. Les données recueillies ne constituent donc pas des données à caractère personnel au sens du règlement général sur la protection des données - RGPD. Le projet s'inscrit dans le cadre d'une recherche scientifique menée au sein d'un CHU et respecte les principes éthiques de la recherche, notamment l'information des participants et leur consentement libre et éclairé. Ces données ne sont utilisées que pour l'étude en cours et concernent l'ensemble des informations épidémiologiques ainsi que le résultat du test. Les données seront conservées pour un maximum de 2 ans à compter de la publication du travail de recherche. Vous avez le droit d'accéder, de supprimer ou de vous opposer à la récolte de ces données en adressant un mail au destinataire du projet. Vous avez le droit de faire une réclamation auprès de la CNIL.
+				<sup>2</sup> Aucune donnée permettant d'identifier directement ou indirectement les participants n'est collectée. Les données recueillies ne constituent donc pas des données à caractère personnel au sens du règlement général sur la protection des données - RGPD. Le projet s'inscrit dans le cadre d'une recherche scientifique menée au sein d'un CHU et respecte les principes éthiques de la recherche, notamment l'information des participants et leur consentement libre et éclairé. Ces données ne sont utilisées que pour l'étude en cours et concernent l'ensemble des informations épidémiologiques ainsi que le résultat du test. Les données seront conservées pour un maximum de 2 ans à compter de la publication du travail de recherche. Vous avez le droit de faire une réclamation auprès de la CNIL.
 			</div>
 			<div class="footnote" id="note3">
 				<sup>3</sup> Test en développement. Les résultats de l'étude seront disponibles en mai 2026.
